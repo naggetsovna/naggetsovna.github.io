@@ -1,8 +1,170 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+    color: #0a1648;
 }
 
 body {
     background-color: #ecf2ff;
-    font-family: sans-serif;
+    font-family: 'Pacifico', cursive;
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.snowflakes-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(-40px) rotateY(0);
+    }
+    50% {
+        transform: translateX(40px) rotateY(180deg);
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.snowflake {
+    top: -5%;
+    position: absolute;
+    background-size: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation-name: snowflakes-shake;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.snowflake.clickable {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.snowflake-effect{
+    position: absolute;
+    transform: translateX(-50%);
+    margin-left: 25px;
+    transform-origin: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ef00ff, 0 0 15px #ff00bc;
+    color: #fff;
+    letter-spacing: 2px;
+    animation: fade 3s running forwards ease-in-out;
+    font-family: 'Lobster';
+    z-index: 999999;
+}
+.invite div{
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 75px;
+    line-height: 35px;
+    position: relative;
+    z-index: 2;
+}
+.invite div:first-child{
+    text-align: left;
+}
+.invite div:last-child{
+    text-align: right;
+}
+.picture{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.string{
+    width: 6px;
+    border-left: 2px solid #666;
+    background: #333;
+    position: absolute;
+    top: 0;
+    height: 185px;
+    z-index: 1;
+    left: calc(50% - 3px);
+}
+.page{
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px 0 30px;
+}
+.first-page{
+    background-image: url("assets/background1.jpg");
+}
+.first-page .picture{
+    width: 90%;
+    margin: 0 auto 30px;
+    padding-top: 88%;
+    background-image: url("assets/newYear.jpg");
+    box-shadow: inset 0px 0px 27px 9px rgba(0,0,0,0.46), 0px 9px 15px 5px rgba(0,0,0,0.45);
+    border-radius:50%;
+}
+.out div{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+.out div:last-child{
+    font-size: 30px;
+}
+.second-page{
+    background-image: url("assets/background2.jpg");
+    background-size: cover;
+}
+.business{
+    color: #fff;
+    text-shadow: 0 0 3px #111, 0 0 9px #000;
+    font-family: 'Lobster';
+    font-size: 38px;
+    line-height: 50px;
+    padding: 15px 20px 30px;
+    text-align: center;
+}
+.second-page .picture{
+    padding-top: 100%;
+    width: 100%;
+    background-image: url("assets/business.jpg");
+}
+.business-out{
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+    text-shadow: 0 0 3px #111, 0 0 9px #000;
+    font-family: 'Lobster';
+    font-size: 30px;
+    line-height: 40px;
 }
