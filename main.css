@@ -88,7 +88,7 @@ body {
     font-size: 45px;
     color: #fff;
     text-align: center;
-    padding: 10px 75px;
+    padding: 7px 60px;
     line-height: 35px;
     position: relative;
     z-index: 2;
@@ -103,6 +103,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width: 90%;
+    box-shadow: inset 0px 0px 27px 9px rgba(0,0,0,0.46), 0px 9px 15px 5px rgba(0,0,0,0.45);
+    margin: 0 auto;
 }
 .string{
     width: 6px;
@@ -110,7 +113,7 @@ body {
     background: #333;
     position: absolute;
     top: 0;
-    height: 185px;
+    height: 157px;
     z-index: 1;
     left: calc(50% - 3px);
 }
@@ -119,7 +122,7 @@ body {
     background-size: contain;
     background-position: center;
     min-height: 100vh;
-    padding: 20px 0 30px;
+    padding: 10px 0 10px;
 }
 .first-page{
     background-image: url("assets/background1.jpg");
@@ -133,7 +136,7 @@ body {
     border-radius:50%;
 }
 .out div{
-    font-size: 50px;
+    font-size: 45px;
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -146,12 +149,12 @@ body {
     background-size: cover;
 }
 .business{
-    color: #fff;
+    color: #fbff18;
     text-shadow: 0 0 3px #111, 0 0 9px #000;
     font-family: 'Lobster';
-    font-size: 38px;
-    line-height: 50px;
-    padding: 15px 20px 30px;
+    font-size: 32px;
+    line-height: 42px;
+    padding: 30px 20px 25px;
     text-align: center;
 }
 .second-page .picture{
@@ -161,10 +164,38 @@ body {
 }
 .business-out{
     text-align: center;
-    color: #fff;
-    padding-top: 30px;
+    color: #fbff18;
+    padding-top: 20px;
     text-shadow: 0 0 3px #111, 0 0 9px #000;
     font-family: 'Lobster';
     font-size: 30px;
     line-height: 40px;
+}
+.third-page{
+    background-image: url("assets/background3.jpg");
+    background-size: cover;
+}
+.third-page .picture{
+    background-image: url("assets/cukierki.jpg");
+    padding-bottom: 90%;
+    width: 90%;
+    box-shadow: inset 0px 0px 27px 9px rgba(0,0,0,0.46), 0px 9px 15px 5px rgba(0,0,0,0.45);
+    margin: 0 auto;
+}
+.cukierki{
+    color: #f283ff;
+    text-shadow: 0 0 3px #111, 0 0 9px #000;
+    font-size: 42px;
+    line-height: 50px;
+    padding: 10px;
+    text-align: center;
+}
+.cukierki-hehe{
+    color: #f283ff;
+    text-shadow: 0 0 3px #111, 0 0 9px #000;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Lobster';
 }
