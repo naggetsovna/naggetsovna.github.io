@@ -6,17 +6,20 @@
 }
 
 body {
-    background-color: #ecf2ff;
+    background-color: #3e153e;;
     font-family: 'Pacifico', cursive;
     padding: 0;
     margin: 0;
 }
 
 .main-content {
-    width: 100%;
     max-width: 500px;
     margin: 0 auto;
     background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
 }
 
 .snowflakes-container {
@@ -117,15 +120,34 @@ body {
     z-index: 1;
     left: calc(50% - 3px);
 }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scroll-container {
+}
+
 .page{
     position: relative;
     background-size: contain;
     background-position: center;
-    min-height: 100vh;
     padding: 10px 0 10px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .first-page{
     background-image: url("assets/background1.jpg");
+}
+.blinking-stars{
+    position: absolute;
+    top: calc(133px + 24%);
+    left: 43%;
 }
 .first-page .picture{
     width: 90%;
@@ -147,6 +169,11 @@ body {
 .second-page{
     background-image: url("assets/background2.jpg");
     background-size: cover;
+}
+.floating-star{
+    position: absolute;
+    top: 54%;
+    left: 6%;
 }
 .business{
     color: #fbff18;
@@ -175,9 +202,14 @@ body {
     background-image: url("assets/background3.jpg");
     background-size: cover;
 }
+.walking-chicken{
+    position: absolute;
+    top: 70%;
+    right: 7%;
+}
 .third-page .picture{
     background-image: url("assets/cukierki.jpg");
-    padding-bottom: 90%;
+    padding-bottom: 105%;
     width: 90%;
     box-shadow: inset 0px 0px 27px 9px rgba(0,0,0,0.46), 0px 9px 15px 5px rgba(0,0,0,0.45);
     margin: 0 auto;
@@ -198,4 +230,206 @@ body {
     text-align: center;
     padding-bottom: 30px;
     font-family: 'Lobster';
+}
+.fourth-page{
+    background-image: url("assets/background4.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+.button{
+    background-image: url("assets/button.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 13px;
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    height: 80px;
+    font-size: 30px;
+    font-family: "Lobster";
+    color: rgb(180,160,140);
+    cursor: pointer;
+}
+.anya{
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s;
+}
+.anya.show{
+    opacity: 1;
+}
+.description{
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.element{
+    width: 70px;
+    height: 70px;
+    background-image: url("assets/element.gif");
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+}
+.name{
+    font-size: 50px;
+    font-family: Lobster;
+    color: #fff;
+    padding-bottom: 30px;
+    position: relative;
+    overflow: visible;
+}
+.fourth-page .name:before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    background-size: 27px;
+    background-image: url("assets/star.png");
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    width: 500px;
+}
+.fourth-page .photo{
+    padding-top: 137%;
+    width: 95%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("assets/anya.png");
+    margin: 0 auto;
+}
+.krutka-intro{
+    font-size: 22px;
+    color: #fff;
+    padding: 10px;
+    font-family: Lobster;
+    text-align: center;
+    text-shadow: 0 0 3px #111, 0 0 9px #000;
+}
+
+.dots {
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dots li a {
+    padding: 10px;
+    width: 4px;
+    height: 5px;
+    display: block;
+}
+
+.dots li a:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.48);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease, background-color 0.3s ease;
+    -ms-transition: -ms-transform 0.3s ease, background-color 0.3s ease;
+    -o-transition: -o-transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dots li a.active:before {
+    content: '';
+    background-color: #FFFFFF;
+    width: 14px;
+    height: 14px;
+    margin-top: -4px;
+    left: 7px;
+    background-color: white;
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    -o-transform: scale(1.0);
+    transform: scale(1.0);
+}
+
+.dots-right {
+    right: 10px;
+}
+
+.dots-left {
+    right: 10px;
+    top: 3px;
+    transform: translateY(0);
+}
+.fifth-page .business{
+    padding-top: 0;
+    z-index: 12;
+    position: relative;
+    color: #fff;
+}
+.fifth-page .picture{
+    background-image: url("assets/sobachka.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: none;
+    width: 100%;
+}
+.fifth-page .homyak{
+    position: absolute;
+    z-index: 13;
+    top: 34%;
+    left: 22%;
+}
+.screen{
+    display: none;
+}
+.screen.show{
+    display: block;
+}
+.sixth-page{
+    background-image: url("assets/background6.jpg");
+}
+.sixth-page span{
+    color: #fff;
+}
+.sixth-page .business{
+    color: #fff;
+    font-size: 43px;
+    padding-top: 10px;
+    padding-bottom: 35px;
+}
+.sixth-page .cukierki{
+    color: #fff;
+    font-size: 46px;
+    margin-top: 30px;
+    padding: 0;
+}
+.sixth-page .picture{
+    box-shadow: none;
+}
+.screen:first-child .picture{
+    background-image: url("assets/camera.jpg");
+    padding-top: 100%;
+    background-size: cover;
+    width: 100%;
+}
+.screen:last-child .picture{
+    background-image: url("assets/vzlom.jpg");
+    padding-top: 100%;
+    background-size: cover;
+    width: 100%;
 }

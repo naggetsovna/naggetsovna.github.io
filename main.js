@@ -116,6 +116,54 @@
     window.snowflakesInitialization = snowflakesInitialization;
 })();
 
+function initializeFourthPageButton(){
+    let buttonEl = document.querySelector('.fourth-page .button');
+    let elementToShow = document.querySelector('.fourth-page .anya');
+    buttonEl.addEventListener('click',function () {
+        elementToShow.classList.add('show');
+    })
+}
+
+let lastPageInterval = 0;
+function resetLastPage(){
+    let screens = document.querySelectorAll('.sixth-page .screen');
+    let counter = 5;
+    let counterElement = document.querySelector('.sixth-page span')
+    screens[0].classList.add('show');
+    screens[1].classList.remove('show');
+    counterElement.innerHTML = ''+counter;
+    clearInterval(lastPageInterval);
+    lastPageInterval = setInterval(function () {
+        counter--;
+        if(!counter){
+            screens[1].classList.add('show');
+            screens[0].classList.remove('show');
+            clearInterval(lastPageInterval);
+        }else{
+            counterElement.innerHTML = ''+counter;
+        }
+    },1000)
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     window.snowflakesInitialization();
+
+    initializeFourthPageButton();
+
+    new fullScroll({
+        mainElement : 'main',
+        sections : 'section',
+        animateTime : 0.7,
+        animateFunction : 'ease',
+        currentPosition: 0,
+        displayDots: true
+    });
+
+
+    window.addEventListener("hashchange", function () {
+        let position = +location.hash.replace('#', '').split('/')[0];
+        if(position == 5){
+            resetLastPage();
+        }
+    }, false);
 })
